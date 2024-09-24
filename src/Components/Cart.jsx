@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectCart } from "../redux/UserAccountSlice";
-import { addOrder, addCart, deleteCart, increaseQuantity, decreaseQuantity } from "../redux/UserAccountSlice"; // Assuming you have these actions
+import {  deleteCart, increaseQuantity} from "../redux/UserAccountSlice"; // Assuming you have these actions
 import { useNavigate } from "react-router-dom";
 
 export function Cart() {

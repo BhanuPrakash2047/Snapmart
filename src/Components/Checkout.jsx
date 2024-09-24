@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addOrder } from '../redux/UserAccountSlice';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 export function Checkout() {
   const cart = useSelector((state) => state.cart.cart);
   const totalCost=useSelector((state)=>state.cart.totalCost) // Replace with your cart slice path
   const user = useSelector((state) => state.user); // Replace with your user slice path
-  const orders=useSelector((state)=> state.cart.orders)
+  // const orders=useSelector((state)=> state.cart.orders)
   const dispatch=useDispatch();
   const navigate=useNavigate();
 //   useEffect(() => {

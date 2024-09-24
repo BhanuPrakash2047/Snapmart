@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Header from "./Components/Header"
-import { Home } from "./Pages/Home"
-import {  useSelector ,useDispatch} from 'react-redux';
-import { updateUserName, updatePhone, updateEmail } from './redux/UserSlice';
+// import { Home } from "./Pages/Home"
+import {  useSelector } from 'react-redux';
 import {Footer} from './Components/Footer'
 
 

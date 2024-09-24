@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateUserName, updatePhone, updateEmail } from '../redux/UserSlice';
-import { useNavigation ,useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 export function Home() {
   const [userName, setUserName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const navigation=useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  // const navigation=useNavigation();
+  // const isSubmitting = navigation.state === 'submitting';
   const navigate = useNavigate(); 
   const dispatch = useDispatch();
   

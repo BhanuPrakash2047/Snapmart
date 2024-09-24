@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+import Header from './Components/Header'; 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Home } from './Pages/Home';
+import { Menu} from './Pages/mainmenu';
+import AppLayout from './AppLayout.jsx';
+import { Provider } from 'react-redux';
+import {Cart} from './Components/Cart.jsx'
+import {ContactUs} from './Components/ContactUs.jsx';
+import { Checkout } from './Components/Checkout.jsx';
+import { Orders } from './Components/Orders.jsx';
 
+const router =createBrowserRouter([
+  {
+    element:<AppLayout />,
+    children:[
+
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/mainmenu',
+        element: <Menu />,
+        // loader: menuLoader,
+        // errorElement: <Error />,
+      },
+      { path: '/cart', element: <Cart /> },
+
+      {path:'/contactus' ,element:<ContactUs />},
+
+      {
+        path: '/checkout',
+        element: <Checkout />,
+     
+      },
+      {
+           path:'/orders',
+           element:<Orders />
+      }
+    ]
+  }
+])
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
